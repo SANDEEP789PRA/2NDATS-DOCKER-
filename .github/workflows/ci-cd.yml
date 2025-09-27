@@ -1,24 +1,22 @@
-name: ATS CI/CD Pipeline   # Pipeline ka naam (Actions tab me dikhega)
+name: ATS CI/CD Pipeline  
 
-on:                       # Kab chale
+on:                       
   push:
-    branches: [ "main" ]  # jab main branch me push hoga
+    branches: [ "main" ]  
   pull_request:
-    branches: [ "main" ]  # jab PR banega main branch pe
+    branches: [ "main" ]  
 
-jobs:                     # Kaam ke groups
-  build:                  # Ek job "build" naam se
-    runs-on: ubuntu-latest # Ubuntu server pe chalega
+jobs:                     
+  build:                  
+    runs-on: ubuntu-latest 
 
-    steps:                # Kaam ke steps
+    steps:                
     - name: Checkout Repository
-      uses: actions/checkout@v3   # repo ka code checkout karega
+      uses: actions/checkout@v3   
 
     - name: Set up Docker
-      uses: docker/setup-buildx-action@v2   # docker ready karega
-
+      uses: docker/setup-buildx-action@v2   
     - name: Build Docker Image
-      run: docker build -t ats-system:latest .  # docker image build karega
-
+      run: docker build -t ats-system:latest .  
     - name: Run Docker Container
-      run: docker run -d -p 8000:8000 -p 8501:8501 ats-system:latest  # container run karega
+      run: docker run -d -p 8000:8000 -p 8501:8501 ats-system:latest 
