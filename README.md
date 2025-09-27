@@ -1,3 +1,5 @@
+The ATS System (Applicant Tracking System) is a Python-based project designed to screen resumes, filter candidates, and simplify the recruitment process. The application is containerized with Docker for easy deployment and comes with a simple Streamlit UI and backend API. It is integrated with CI/CD pipelines to automate builds and Docker Hub deployment.
+
 # 🚀 ATS System (Applicant Tracking System)
 
 A simple **Applicant Tracking System** built with Python and Docker.  
